@@ -21,7 +21,7 @@ long long get_elapsed_usec(struct timeval* end, struct timeval* start) {
 	if (end->tv_usec >= start->tv_usec) {
 		elapsed_usec += end->tv_usec - start->tv_usec;
 	} else {
-		elapsed_usec -= end->tv_usec - start->tv_usec;
+		elapsed_usec -= start->tv_usec - end->tv_usec;
 	}
 	return elapsed_usec;
 }
